@@ -1,0 +1,19 @@
+
+
+// get cart items of users and calculate the total amount
+
+// create record for order
+
+// reduce the stock (product quantity)
+
+// clear the cart
+
+// deduct the amount
+// inform to sellers
+//inform to courier
+
+40000
+
+40000 
+
+= 80000

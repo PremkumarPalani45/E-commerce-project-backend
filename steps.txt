@@ -1,0 +1,48 @@
+1. create counter collection (_id:cartitemid,value:0)
+
+2. while adding cart items increment the counter and then use counter value as
+id to cartitem document
+
+
+db.products.aggregate([
+// 1.create document for rating
+
+
+{
+    $unwind:"$rating"
+},
+
+//group rating per product get average rating
+{
+    $group:{
+        _id:"$name",
+        averageRating:{$avg:"$rating.rating"}
+    }
+}
+])
+
+
+db.products.aggregate([
+// 1.prject name and count of rating
+{
+     $project:{
+        name:1,
+        
+        countOfRating:{
+            $cond:{if:{$isArray:"$rating"}
+            ,then:{$size:"$rating"},else:0}
+        }
+            }
+     },
+     {
+        //stage2 sort the collection
+
+        $sort:{countOfRating:-1}
+     }
+     ,{
+        //stage 3 limit to just one 
+
+        $limit:1
+     }
+
+])

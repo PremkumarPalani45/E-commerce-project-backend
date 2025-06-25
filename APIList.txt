@@ -1,0 +1,25 @@
+
+ProductController
+
+getProduct done
+
+addaProduct -done
+
+getOneProduct -done
+
+filterProduct - done
+
+rateProduct
+
+add items to cart
+
+get items of cart
+
+remove items in cart
+
+USERCONTROLLER
+
+signup - Email,Name,Password, (type of user- customer,seller) -Done
+
+signin - Email, Password - Done
+
