@@ -1,21 +1,8 @@
-import exp from 'constants';
-import { sign } from 'crypto';
 import fs from 'fs'
 import { transferableAbortController } from 'util';
 import winston from 'winston'
 
 const fsPromises=fs.promises;
-
-// async function log(logdata){
-//     try{
-//         logdata= `\n ${new Date().toString() } - ${logdata}`;
-       
-//       await  fsPromises.appendFile("log.text",logdata)
-//     }
-//     catch(err){
-
-//     }
-// }
 
 const loggerwi=winston.createLogger({
    level:'info',
@@ -25,10 +12,6 @@ const loggerwi=winston.createLogger({
     new winston.transports.File({filename:'log.txt'})
    ]
 })
-
-
-
-
 
 const loggermiddleware =(req,res,next)=>{
     //1. log request body
