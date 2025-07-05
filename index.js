@@ -87,7 +87,11 @@ server.use((req,res)=>{
     res.status(404).send("API not found. Please check our documentation for more information at localhost:3020/api-docs")
 })
 
-server.listen(3020,()=>{
+const PORT = process.env.PORT || 3020;
+
+
+
+server.listen(PORT,()=>{
     console.log('server is listening at 3020')
     connectUsingmongoose();
 });
